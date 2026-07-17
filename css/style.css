@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f7fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background-color: #111;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+header {
+  background-color: #102a43;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 22px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #ffd166;
+}
+
+.menu-button,
+.theme-button {
+  border: none;
+  padding: 9px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.menu-button {
+  display: none;
+}
+
+.theme-button {
+  background-color: #ffd166;
+  color: #111;
+}
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #1d3557, #457b9d);
+  color: white;
+  padding: 60px 10%;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin: 10px 0;
+}
+
+.hero p {
+  max-width: 650px;
+  margin-bottom: 20px;
+}
+
+.small-title {
+  color: #ffd166;
+  font-weight: bold;
+}
+
+.main-button {
+  display: inline-block;
+  background-color: #ffd166;
+  color: #111;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.main-button:hover {
+  background-color: #fcbf49;
+}
+
+.section {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 0;
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #102a43;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  padding: 22px;
+  border-radius: 14px;
+  flex: 1 1 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  color: #1d3557;
+  margin-bottom: 10px;
+}
+
+.extras-list {
+  background-color: white;
+  padding: 25px 25px 25px 45px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.extras-list li {
+  margin-bottom: 10px;
+}
+
+form {
+  background-color: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+form button {
+  background-color: #1d3557;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #457b9d;
+}
+
+.back-to-top {
+  display: none;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 50px;
+  background-color: #ffd166;
+  color: #111;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  background-color: #102a43;
+  color: white;
+  padding: 20px;
+}
+
+.dark-mode {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+.dark-mode .section h2 {
+  color: #ffd166;
+}
+
+.dark-mode .card,
+.dark-mode .extras-list,
+.dark-mode form {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.dark-mode .card h3 {
+  color: #ffd166;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 15px 0;
+  }
+
+  .menu-button {
+    display: block;
+    background-color: white;
+    color: #102a43;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .theme-button {
+    width: 100%;
+  }
+
+  .hero {
+    min-height: 70vh;
+    padding: 50px 7%;
+  }
+
+  .hero h2 {
+    font-size: 36px;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+}
